@@ -1,0 +1,57 @@
+body {
+	background:#00374C;
+}
+
+h1 {
+	position: absolute; 
+    top: 3%; 
+    left: 50%;
+    margin-left:-361;
+ 	color:#5689A7;
+ 	font-size: 25px;
+}
+
+h2 {
+	position: absolute; 
+    top: 13%; 
+    left: 50%;
+    margin-left:-360;
+ 	color:#5689A7;
+ 	font-size: 25px;
+}
+
+#container {
+    position: absolute; 
+    top: 4.5%; 
+    left: 2.5%;  
+   	width: 95%;
+    height: 95%;
+    background:#162127;	
+}
+
+#forIntput {
+	position: absolute; 
+   	top: 10%; 
+   	left: 50%;
+   	margin-left:-361;  
+   	background:#5689A7;
+
+}
+
+#label {
+	position: absolute; 
+    top: 20%; 
+    left: 50%;
+    margin-left:-361;  
+    background:#5689A7;
+}
+
+#buttonStyle {
+	position: absolute; 
+	bottom: 1%; 
+	right: 10%;
+    margin-left:-360;
+	background:#5689A7;
+	font-size: 25px;
+}
+
