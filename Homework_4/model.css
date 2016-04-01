@@ -1,0 +1,126 @@
+body {
+  background:#34495E;
+}
+button {
+    width: 40;
+    height: 40;
+    display: inline-block;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    background-color: #F39C12;
+    border: 1px solid #B68538;
+    border-radius: 3px;
+    -webkit-appearance: none; 
+} 
+button:focus {
+    text-decoration: none;
+    border-color: #F3D012;
+    outline: none;
+} 
+button:hover {
+    color: rgba(102, 102, 102, 0.5);
+    cursor: pointer;
+    background-color: #F9E57A;
+    border-color: rgba(197, 197, 197, 0.5);
+    box-shadow: none;
+}
+.btn-up{
+    position: absolute; 
+    top: 82%;
+    left: 93%;
+}
+button.btn-bottom{
+    position: absolute; 
+    top: 88%;
+    left: 93%;
+}
+button.btn-right{
+    position: absolute; 
+    top: 85%;
+    left: 96%;
+}
+button.btn-left{
+    position: absolute; 
+    top: 85%;
+    left: 90%;
+}
+.container {
+    position: absolute; 
+    top: 50%; 
+    left: 50%;  
+    width: 1200;
+    height: 750;
+    margin-left: -600;
+    margin-top: -375;
+    background:#ECF0F1; 
+}
+.car {
+    position: absolute; 
+    top: 2; 
+    left: 2;
+    width: 150;
+    height: 150;
+    background:#eeeeee;
+}
+.car-roof {
+    position: absolute;  
+    left: 25%;
+    width: 50%;
+    height: 40%;
+    background:#F1C40F;
+    border-radius: 30%;
+}
+.car-roof-window {
+    position: absolute;  
+    left: 20%;
+    top: 20%;
+    width: 60%;
+    height: 60%;
+    background:#19B5FE;
+}
+.car-frame {
+    position: absolute;  
+    top: 35%;
+    width: 100%;
+    height: 40%;
+    background:#F39C12;
+    border-radius: 60%;
+}
+.frame-light-front {
+    position: absolute;  
+    top: 19%;
+    right: 2%;
+    width: 10%;
+    height: 20%;
+    background:#ffffff;
+    border-radius: 80%;
+}
+.frame-light-behind {
+    position: absolute;  
+    top: 19%;
+    left: 2%;
+    width: 10%;
+    height: 20%;
+    background:#C0392B;
+    border-radius: 80%;
+}
+.car-wheel-left {
+    position: absolute;  
+    top : 70%;
+    left: 10%;
+    width: 30%;
+    height: 30%;
+    background:#1C2A39;
+    border-radius: 100%;
+}
+.car-wheel-right {
+    position: absolute;  
+    top : 70%;
+    right: 10%;
+    width: 30%;
+    height: 30%;
+    background:#1C2A39;
+    border-radius: 100%;
+}
