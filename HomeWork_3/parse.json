@@ -1,0 +1,10 @@
+	formUserInfo({indexColor:"#44944A",	name: "Дима", color: "Арлекин"});
+	formUserInfo({indexColor:"#9966CC",	name: "Миша", color: "Аметистовый"});
+	formUserInfo({indexColor:"#FFDB8B",	name: "Бахрам", color: "Бледно-жёлтый"});
+	formUserInfo({indexColor:"#9B2D30",	name: "Артём ", color: "Бордовый"});
+	formUserInfo({indexColor:"#CD7F32",	name: "Борислав ", color: "Бронзовый"});
+	formUserInfo({indexColor:"#34C924",	name: "Валентин ", color: "Вердепомовый"});
+	formUserInfo({indexColor:"#A7FC00",	name: "Зиновий", color: "Весенний бутон"});
+	formUserInfo({indexColor:"#BD33A4",	name: "Май", color: "Византийский"});
+	formUserInfo({indexColor:"#CB6586",	name: "Натан", color: "Жимолость"});
+	formUserInfo({indexColor:"#FF4D00",	name: "Радим", color: "Киноварь"});
