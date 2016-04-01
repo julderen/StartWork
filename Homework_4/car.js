@@ -54,16 +54,16 @@ var Controllers = {
 	},
 	pressKeyboard: function (event) {
 		console.log(event.which);
-		if (event.which === 119) {
+		if ((event.which === 119) || (event.which === 87) || (event.which === 1094) || (event.which === 1062)) {
 			Controllers.moveCarY(-20)();
 		} else {
-			if (event.which === 115) {
+			if ((event.which === 115) || (event.which === 83) || (event.which === 1099) || (event.which === 1067)) {
 				Controllers.moveCarY(20)();
 			} else {
-				if (event.which === 97) {
+				if ((event.which === 97) || (event.which === 65) || (event.which === 1092) || (event.which === 1060)) {
 					Controllers.moveCarX(-20)();
 				} else {
-					if (event.which === 100) {
+					if ((event.which === 100) || (event.which === 68) || (event.which === 1074) || (event.which === 1042)) {
 						Controllers.moveCarX(20)();
 					}
 				}
