@@ -29,7 +29,7 @@ var Utils = {
 	},
 
 	createContainer: function () {
-		Utils.createMatrix(); 
+		Utils.createMatrix();
 		Utils.zeroMatrix();
 		$(".container").css("height", Data.height);
 		$(".container").css("width", Data.width);
@@ -209,7 +209,7 @@ var Controllers = {
 			if (Data.labyrinth[left / 20][(top / 20 + shift / 20)] === 1) {
 				top = shift + top;
 				men.css("top", top);
-				if ((left / 20 === Data.exit.i) && (top / 20 + shift / 20 === Data.exit.j)) {
+				if ((left / 20 === Data.exit.i) && (top / 20 === Data.exit.j)) {
 					alert("Вы победили!!! \n" + Data.counterStep + " нажатий\nУ вас было:" + Data.counterLive + " попыток");
 				}
 			} else {
@@ -228,7 +228,7 @@ var Controllers = {
 			if (Data.labyrinth[left / 20 + shift / 20][top / 20] === 1) {
 				left = shift + left;
 				men.css("left", left);
-				if ((left / 20 + shift / 20 === Data.exit.i) && (top / 20 === Data.exit.j)) {
+				if ((left / 20 === Data.exit.i) && (top / 20 === Data.exit.j)) {
 					alert("Вы победили!!! \n" + Data.counterStep + " нажатий\nУ вас было:" + Data.counterLive + " попыток");
 				}
 			} else {
@@ -243,18 +243,12 @@ var Controllers = {
 		Data.counterStep++;
 		if ((event.which === 119) || (event.which === 87) || (event.which === 1094) || (event.which === 1062)) {
 			Controllers.moveMenY(-20)();
-		} else {
-			if ((event.which === 115) || (event.which === 83) || (event.which === 1099) || (event.which === 1067)) {
+		} else if ((event.which === 115) || (event.which === 83) || (event.which === 1099) || (event.which === 1067)) {
 				Controllers.moveMenY(20)();
-			} else {
-				if ((event.which === 97) || (event.which === 65) || (event.which === 1092) || (event.which === 1060)) {
-					Controllers.moveMenX(-20)();
-				} else {
-					if ((event.which === 100) || (event.which === 68) || (event.which === 1074) || (event.which === 1042)) {
-						Controllers.moveMenX(20)();
-					}
-				}
-			}
+		} else if ((event.which === 97) || (event.which === 65) || (event.which === 1092) || (event.which === 1060)) {
+			Controllers.moveMenX(-20)();
+		} else if ((event.which === 100) || (event.which === 68) || (event.which === 1074) || (event.which === 1042)) {
+			Controllers.moveMenX(20)();
 		}
 	},
 };
