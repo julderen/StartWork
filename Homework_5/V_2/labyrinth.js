@@ -13,7 +13,7 @@ var Utils = {
 	},
 	createCube: function (left, top) {
 		var cube = $("<div></div>");
-		$(cube).css("left", left);
+		$(cube).css("left", left); //Закешировать
 		$(cube).css("top", top);
 		$(".container").append(cube);
 	},
@@ -29,14 +29,14 @@ var Utils = {
 	},
 
 	createContainer: function () {
-		Utils.createMatrix();
+		Utils.createMatrix(); //this
 		Utils.zeroMatrix();
-		$(".container").css("height", Data.height);
+		$(".container").css("height", Data.height); //Закешировать контейнер
 		$(".container").css("width", Data.width);
 		$(".container").css("margin-left", (-Data.width / 2));
 		$(".container").css("margin-top", (-Data.height / 2));
 
-		Utils.createBorderWall(Data.width, Data.height);
+		Utils.createBorderWall(Data.width, Data.height); //this
 		Utils.drawLabyrinth(Data.width, Data.height);
 	},
 
@@ -56,7 +56,7 @@ var Utils = {
 		Data.labyrinth[i][j] = 1;
 		for (var k = 0; k < 20; k++) {
 			var direction = Math.random();
-			if (direction < 0.4) {
+			if (direction < 0.4) { // Нормальный else if
 				if ((i + 1 < Data.width / 20) && (Data.labyrinth[i + 1][j] === 0)) {
 					Utils.goAhead(i, j);
 					Utils.createLabyrinth(i + 1, j);
@@ -83,7 +83,7 @@ var Utils = {
 			}
 		}
 		if ((i === Data.begin.i) && (j === Data.begin.j)) {
-			Utils.createMen();
+			Utils.createMen(); //this
 			Utils.drawLabyrinth();
 		}
 	},
@@ -92,6 +92,9 @@ var Utils = {
 		console.log("head");
 		console.log(i);
 		console.log(j);
+
+		// Закешировать Data.exit
+
 		if ((Math.random() > 0.4) && ((i !== Data.exit.i) || (j + 1 !== Data.exit.j)) && (Data.labyrinth[i][j + 1] === 0)) {
 			Data.labyrinth[i][j + 1] = 2;
 		}
@@ -110,6 +113,9 @@ var Utils = {
 	},
 
 	goBack: function (i, j) {
+
+		// Закешировать Data.exit
+
 		if ((Math.random() > 0.4) && ((i !== Data.exit.i) || (j + 1 !== Data.exit.j)) && (Data.labyrinth[i][j + 1] === 0)) {
 			Data.labyrinth[i][j + 1] = 2;
 		}
@@ -128,6 +134,9 @@ var Utils = {
 	},
 
 	goUp: function (i, j) {
+
+		// Закешировать Data.exit
+
 		if ((Math.random() > 0.4) && ((i + 1 !== Data.exit.i) || (j !== Data.exit.j)) && (Data.labyrinth[i + 1][j + 1] === 0)) {
 			Data.labyrinth[i + 1][j - 1] = 2;
 		}
@@ -146,6 +155,9 @@ var Utils = {
 	},
 
 	goDown: function (i, j) {
+
+		// Закешировать Data.exit
+
 		if ((Math.random() > 0.4) && ((i + 1 !== Data.exit.i) || (j !== Data.exit.j)) && (Data.labyrinth[i + 1][j] === 0)) {
 			Data.labyrinth[i + 1][j] = 2;
 		}
@@ -161,11 +173,13 @@ var Utils = {
 	},
 
 	createMen: function () {
-		$(Selecters.men).css("left", Data.begin.i * 20);
+		$(Selecters.men).css("left", Data.begin.i * 20); //Закешеривать $(Selecters.men)
 		$(Selecters.men).css("top", Data.begin.j * 20);
 	},
 
 	createBorderWall: function () {
+		// Закешировать переменные типо Data.width, используемые более 1 раза
+
 		var i;
 		for (i = 0; i < Data.width / 20; i += 1) {
 			Data.labyrinth[i][0] = 2;
@@ -190,12 +204,12 @@ var Utils = {
 				Data.labyrinth[Data.width / 20 - 1][i] = 2;
 			}
 		}
-		Utils.createLabyrinth(Data.begin.i, Data.begin.j);
+		Utils.createLabyrinth(Data.begin.i, Data.begin.j); //this
 	},
 	createMatrix: function () {
 		var i;
 		for (i = 0; i < (Utils.getWidth() - Utils.getWidth() % 20) / 20; i++) {
-			Data.labyrinth[i] = [Utils.getHeight() - Utils.getHeight() % 20];
+			Data.labyrinth[i] = [Utils.getHeight() - Utils.getHeight() % 20]; // this
 		}
 	}
 };
@@ -250,10 +264,10 @@ var Controllers = {
 		} else if ((event.which === 100) || (event.which === 68) || (event.which === 1074) || (event.which === 1042)) {
 			Controllers.moveMenX(20)();
 		}
-	},
+	}, //Лишняя запятая
 };
 
-var Data = {
+var Data = { // Сделать метод init в котором устанавливать Utils.getWidth() - Utils.getWidth() % 20
 	labyrinth: [Utils.getWidth() - Utils.getWidth() % 20],
 	sizeCube: 20,
 	width: Utils.getWidth() - Utils.getWidth() % 20,
@@ -281,7 +295,7 @@ var Events = {
 
 var View = {
 	init: function () {
-		Utils.createContainer();
+		Utils.createContainer(); //Методы отрисовки вынести во View
 		Events.subscribe();
 	}
 };
