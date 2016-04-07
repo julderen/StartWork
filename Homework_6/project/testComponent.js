@@ -1,8 +1,12 @@
 import React from "react";
 
-class Road extends  React.Component {
+class Road extends React.Component {
     constructor(){
         this.shift= 0;
+
+		this.state = { elapsed: 0 };
+
+		this.tick = this.tick.bind(this);
     }
 
     componentDidMount(){
@@ -10,21 +14,16 @@ class Road extends  React.Component {
     }
 
     tick(){
-        this.setState({elapsed: shift});
+        this.setState({ elapsed: this.shift });
     }
 
     render() {
-       var elapsed = Math.round(this.elapsed / 100);
+       var elapsed = Math.round(this.state.elapsed / 100);
        var seconds = (elapsed / 10).toFixed(1);
 
-           return (
-                <div className="car" style={
-                    {
-                     left: seconds
-                    }
-                }
-                 ></div>
-           );
+       return (
+            <div className="car" style={{left: seconds}}></div>
+       );
     }
 }
 
