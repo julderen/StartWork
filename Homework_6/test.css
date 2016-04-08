@@ -22,3 +22,11 @@ body {
     height: 77px;
     background-image: url("car.jpg");
 }
+
+.ball {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    background-image: url("puziri.png");
+}
